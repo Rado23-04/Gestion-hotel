@@ -115,6 +115,19 @@ INSERT INTO status_client (arrived, missing, in_fidelity, in_blacklist, id_custo
 (true, true, false, false, 9),
 (true, false, true, false, 10);
 
+-- Table room_type
+INSERT INTO room_type ("name") VALUES 
+('Single Room'),
+('Double Room'),
+('Twin Room'),
+('Triple Room'),
+('Suite'),
+('Executive Suite'),
+('Family Room'),
+('Connecting Room'),
+('Deluxe Room'),
+('Presidential Suite');
+
 -- Table buy
 INSERT INTO buy (id_client, id_service)
 VALUES
