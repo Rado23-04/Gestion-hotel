@@ -8,6 +8,15 @@ INSERT INTO province_available ("name", code) VALUES
 ('Toliara', 6);
 
 
+-- Table hotel
+INSERT INTO hotel ("name", "address") VALUES 
+('Akory Hotel A', '123 Rue Principale Antananarivo'),
+('Akory Hotel B', '456 Avenue Centrale Antsiranana'),
+('Akory Hotel C', '789 Boulevard Nord Fianarantsoa'),
+('Akory Hotel D', '321 Rue Est Mahajanga'),
+('Akory Hotel E', '654 Avenue Ouest Toamasina'),
+('Akory Hotel F', '987 Rue Sud Toliara');
+
 -- Table receptionist
 INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
 VALUES
@@ -202,20 +211,6 @@ VALUES
     (8, '808', 'Double', 2, 8, 8, 8),
     (9, '909', 'Triple', 3, 9, 9, 9),
     (10, '1010', 'Single', 1, 10, 10, 10);
-
--- Table hotel
-INSERT INTO hotel (id_hotel, hotel_name, "address")
-VALUES
-    ('HOTEL001', 'Hotel A', '123 Main Street'),
-    ('HOTEL002', 'Hotel B', '456 Elm Avenue'),
-    ('HOTEL003', 'Hotel C', '789 Oak Lane'),
-    ('HOTEL004', 'Hotel D', '321 Pine Road'),
-    ('HOTEL005', 'Hotel E', '654 Maple Drive'),
-    ('HOTEL006', 'Hotel F', '987 Cedar Court'),
-    ('HOTEL007', 'Hotel G', '654 Elm Avenue'),
-    ('HOTEL008', 'Hotel H', '321 Oak Lane'),
-    ('HOTEL009', 'Hotel I', '789 Pine Road'),
-    ('HOTEL010', 'Hotel J', '123 Maple Drive');
 
 -- Table have
 INSERT INTO have (id_room, id_hotel)
