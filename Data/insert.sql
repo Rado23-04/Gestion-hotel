@@ -49,7 +49,7 @@ INSERT INTO customer (first_name, last_name, principal_contact, "address", emerg
 ('Isabella', 'Lopez', '999-555-1234', '258 Pine Avenue', '999-999-9999', 'F', 321654987, 'isabella.lopez@example.com', 'letmein5678', 6);
 
 -- Table payement_method
-INSERT INTO payement_method ("name") VALUES 
+INSERT INTO payment_method ("name") VALUES 
 ('mobile monnaie'),
 ('banque'),
 ('cash'),
