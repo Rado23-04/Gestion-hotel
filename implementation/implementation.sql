@@ -84,7 +84,7 @@ CREATE TABLE room_features(
 );
 
 
-CREATE TABLE room(
+CREATE TABLE room( -- BUG
     id_room serial,
     "number" Varchar(100),
     room_type Varchar(200),
@@ -101,7 +101,7 @@ CREATE TABLE hotel(
 );
 
 
-CREATE TABLE have(
+CREATE TABLE have( --BUG
     id_room int references room(id_room),
     id_hotel Varchar(200) references hotel(id_hotel)
 );
@@ -113,7 +113,7 @@ CREATE TABLE Season(
         end_date   Date
 );
 
-CREATE TABLE price(
+CREATE TABLE price( --BUG   
     id_price_by_season serial,
     cost_per_night Float,
     id_room int references room(id_room),
@@ -148,7 +148,7 @@ CREATE TABLE payement_method(
         cash               Bool NOT NULL
 );
 
-CREATE TABLE choose(
+CREATE TABLE choose( --BUG
     id_payment int references payment(id_payment),
     id_payement_method int references payement_method(id_payement_method)
 );
