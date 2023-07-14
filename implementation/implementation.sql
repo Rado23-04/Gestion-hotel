@@ -1,6 +1,6 @@
-create database Akory_hotel;
+create database akory_hotel;
 
-\c Akory_hotel;
+\c akory_hotel;
 
 CREATE TABLE receptionist(
         id_employee  Int PRIMARY KEY ,
@@ -20,7 +20,7 @@ CREATE TABLE Client(
         emergency_number  Varchar (50) NOT NULL ,
         gender            Char (1) NOT NULL ,
         CIN               Int NOT NULL ,
-        Email             Varchar (1) NOT NULL ,
+        Email             Varchar (100) NOT NULL ,
         "Password"          Varchar (50) NOT NULL ,
         id_employee int references receptionist(id_employee)
 );
@@ -65,7 +65,7 @@ CREATE TABLE cancel(
 );
 
 CREATE TABLE promotion(
-    id_promotion serial,
+    id_promotion serial PRIMARY KEY,
     "name"         Varchar (100) NOT NULL ,
     "begin"        Date NOT NULL ,
     "end"          Date NOT NULL ,
@@ -84,8 +84,8 @@ CREATE TABLE room_features(
 );
 
 
-CREATE TABLE room( -- BUG
-    id_room serial,
+CREATE TABLE room(
+    id_room serial PRIMARY KEY,
     "number" Varchar(100),
     room_type Varchar(200),
     capacity_room int,
@@ -101,20 +101,20 @@ CREATE TABLE hotel(
 );
 
 
-CREATE TABLE have( --BUG
+CREATE TABLE have(
     id_room int references room(id_room),
     id_hotel Varchar(200) references hotel(id_hotel)
 );
 
 CREATE TABLE Season(
         id_season  Int PRIMARY KEY ,
-        Itmes      Varchar (50) ,
+        Items      Varchar (50) ,
         "start_date" Date ,
         end_date   Date
 );
 
-CREATE TABLE price( --BUG   
-    id_price_by_season serial,
+CREATE TABLE price(
+    id_price_by_season serial PRIMARY KEY,
     cost_per_night Float,
     id_room int references room(id_room),
     id_season int references Season(id_season)
@@ -130,7 +130,7 @@ CREATE TABLE province_available(
 
 
 CREATE TABLE payment(
-    id_payment serial,
+    id_payment serial PRIMARY KEY,
     payement_date date NOT NULL,
     amount_paid float NOT NULL,
     number_night int NOT NULL, 
@@ -142,19 +142,13 @@ CREATE TABLE payment(
 );
 
 CREATE TABLE payement_method(
-        id_payement_method serial,
+        id_payement_method serial PRIMARY KEY,
         mobile_money       Bool NOT NULL ,
         credit_card        Bool NOT NULL ,
         cash               Bool NOT NULL
 );
 
-CREATE TABLE choose( --BUG
+CREATE TABLE choose(
     id_payment int references payment(id_payment),
     id_payement_method int references payement_method(id_payement_method)
 );
-
-
-
-
-
-
