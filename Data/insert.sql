@@ -74,6 +74,21 @@ INSERT INTO payment ("date", amount_paid, number_night, room_occupation, deadlin
 ('2023-07-22 16:20:00', 200.00, 5, 2, '2023-07-27 12:00:00', true, true, 3, 9),
 ('2023-07-23 10:50:00', 250.00, 7, 2, '2023-07-30 12:00:00', true, true, 1, 10);
 
+
+-- Table service
+INSERT INTO service ("name", "description", price, reduction)
+VALUES
+    ('Service 1', 'Description 1', 10.99, 0.05),
+    ('Service 2', 'Description 2', 15.99, 0.10),
+    ('Service 3', 'Description 3', 20.99, 0.15),
+    ('Service 4', 'Description 4', 25.99, 0.20),
+    ('Service 5', 'Description 5', 30.99, 0.25),
+    ('Service 6', 'Description 6', 35.99, 0.30),
+    ('Service 7', 'Description 7', 40.99, 0.35),
+    ('Service 8', 'Description 8', 45.99, 0.40),
+    ('Service 9', 'Description 9', 50.99, 0.45),
+    ('Service 10', 'Description 10', 55.99, 0.50);
+
 -- Table buy
 INSERT INTO buy (id_client, id_service)
 VALUES
@@ -101,20 +116,6 @@ VALUES
     (8, 'Daniel', 'Anderson', '7778889999', '321 Oak Lane', '6667778888', 'M', 999888777, 'daniel.anderson@example.com', 'password123', 8),
     (9, 'Sophia', 'Clark', '2223334444', '789 Pine Road', '7778889999', 'F', 111222333, 'sophia.clark@example.com', 'password456', 9),
     (10, 'James', 'Lee', '3334445555', '123 Maple Drive', '8889990000', 'M', 444555666, 'james.lee@example.com', 'password999', 10);
-
--- Table service
-INSERT INTO service (id_service, "service_name", "description", price, reduction)
-VALUES
-    (1, 'Service 1', 'Description 1', 10.99, 0.05),
-    (2, 'Service 2', 'Description 2', 15.99, 0.10),
-    (3, 'Service 3', 'Description 3', 20.99, 0.15),
-    (4, 'Service 4', 'Description 4', 25.99, 0.20),
-    (5, 'Service 5', 'Description 5', 30.99, 0.25),
-    (6, 'Service 6', 'Description 6', 35.99, 0.30),
-    (7, 'Service 7', 'Description 7', 40.99, 0.35),
-    (8, 'Service 8', 'Description 8', 45.99, 0.40),
-    (9, 'Service 9', 'Description 9', 50.99, 0.45),
-    (10, 'Service 10', 'Description 10', 55.99, 0.50);
 
 -- Table buy
 INSERT INTO buy (id_client, id_service)
