@@ -2,7 +2,7 @@
 -- Cette requête affiche tout les réservations d'un client 
 SELECT * 
 FROM reservation r
-INNER JOIN customer c ON c.id = r.id 
-WHERE c.id = 1 ;
+INNER JOIN customer c ON r.id = r.id_client 
+WHERE r.id_client = 1 ;
 
 
