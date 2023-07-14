@@ -61,6 +61,19 @@ INSERT INTO payement_method ("name") VALUES
 ('cash'),
 ('mobile monnaie');
 
+-- Table payment
+INSERT INTO payment ("date", amount_paid, number_night, room_occupation, deadline, lending_status, total_amount_status, id_payement_method, id_customer) VALUES 
+('2023-07-14 10:00:00', 150.00, 3, 2, '2023-07-17 12:00:00', true, true, 1, 1),
+('2023-07-15 15:30:00', 200.00, 5, 1, '2023-07-20 12:00:00', false, true, 2, 2),
+('2023-07-16 09:45:00', 100.00, 2, 1, '2023-07-18 12:00:00', true, true, 3, 3),
+('2023-07-17 11:20:00', 250.00, 7, 2, '2023-07-24 12:00:00', true, true, 1, 4),
+('2023-07-18 14:10:00', 180.00, 4, 1, '2023-07-22 12:00:00', false, true, 2, 5),
+('2023-07-19 17:30:00', 120.00, 3, 1, '2023-07-22 12:00:00', true, true, 3, 6),
+('2023-07-20 09:15:00', 300.00, 6, 2, '2023-07-26 12:00:00', true, true, 1, 7),
+('2023-07-21 12:45:00', 150.00, 4, 1, '2023-07-25 12:00:00', false, true, 2, 8),
+('2023-07-22 16:20:00', 200.00, 5, 2, '2023-07-27 12:00:00', true, true, 3, 9),
+('2023-07-23 10:50:00', 250.00, 7, 2, '2023-07-30 12:00:00', true, true, 1, 10);
+
 -- Table buy
 INSERT INTO buy (id_client, id_service)
 VALUES
@@ -242,21 +255,6 @@ VALUES
     (450.00, 8, 8),
     (500.00, 9, 9),
     (550.00, 10, 10);
-
-
--- Table payment
-INSERT INTO payment (id_payment, payement_date, amount_paid, number_night, room_occupied, deadline_payment, lending_status, total_amount_status, id_employee)
-VALUES
-    (1, '2023-07-15', 100.00, 5, 2, '2023-07-20', true, true, 1),
-    (2, '2023-08-10', 150.00, 3, 1, '2023-08-15', false, false, 2),
-    (3, '2023-09-05', 200.00, 0, 0, '2023-09-10', true, true, 3),
-    (4, '2023-10-01', 250.00, 1, 0, '2023-10-07', false, false, 4),
-    (5, '2023-11-15', 300.00, 4, 2, '2023-11-20', true, true, 5),
-    (6, '2023-12-10', 350.00, 2, 0, '2023-12-15', false, false, 6),
-    (7, '2024-01-05', 400.00, 0, 0, '2024-01-10', true, true, 7),
-    (8, '2024-02-01', 450.00, 3, 1, '2024-02-07', false, false, 8),
-    (9, '2024-03-15', 500.00, 1, 0, '2024-03-20', true, true, 9),
-    (10, '2024-04-10', 550.00, 5, 3, '2024-04-15', false, false, 10);
 
 -- Table payement_method
 INSERT INTO payement_method (id_payement_method, mobile_money, credit_card, cash)
