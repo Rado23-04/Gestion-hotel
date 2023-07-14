@@ -31,3 +31,29 @@ DROP COLUMN id_hotel CASCADE;
 --Ajouter une nouvelle colonne "id_hotel":
 ALTER TABLE receptionist
 ADD COLUMN id_hotel int references hotel(id);
+
+-- Modifier le type de donné int en varchar(100)
+ALTER TABLE receptionist
+ALTER COLUMN work_contact TYPE varchar(100);
+
+--Ajouter une nouvelle colonne "id_employee":
+ALTER TABLE customer
+DROP COLUMN id_employee;
+
+ALTER TABLE customer
+ADD COLUMN id_employee int references receptionist(id);
+
+--supprimer les colonnes mobile_money, credit_card et cash
+ALTER TABLE payment_method
+DROP COLUMN mobile_money;
+
+ALTER TABLE payment_method
+DROP COLUMN credit_card;
+
+ALTER TABLE payment_method
+DROP COLUMN cash;
+
+-- ajouter une nouvelle colonne:
+ALTER TABLE payment_method
+ADD COLUMN "name" Varchar(100);
+
