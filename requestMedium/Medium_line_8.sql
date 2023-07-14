@@ -1,4 +1,7 @@
 --Afficher la liste des chambres occupées actuellement
-select * FROM room INNER JOIN reservation
-ON room.id = reservation.id 
-WHERE current_date BETWEEN (date_arrived and leaving_date);
+
+SELECT  room.number
+FROM room 
+INNER JOIN reservation ON room.id = reservation.id_room
+WHERE reservation.is_cancel = false
+  AND reservation.leaving_date >= CURRENT_DATE;
