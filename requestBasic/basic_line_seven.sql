@@ -3,5 +3,5 @@
 
 SELECT SUM(amount_paid) AS total_payments
 FROM payment
-INNER JOIN payement_method ON payment.id = payement.id_payement_method
-WHERE payement_method.mobile_money = TRUE;
+JOIN payement_method ON payment.id_payement_method = payement_method.id
+WHERE payement_method.name = 'Mobile Money';
