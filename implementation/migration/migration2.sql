@@ -131,3 +131,34 @@ DROP COLUMN id_room CASCADE;
 
 ALTER TABLE "price"
 DROP COLUMN id_season CASCADE;
+
+--Modifier le nom de la colonne "id_price_by_season" en "id" dans la table "price":
+ALTER TABLE room
+RENAME COLUMN id_room TO id;
+
+--Supprimer la colonne "room_type":
+ALTER TABLE room
+DROP COLUMN room_type CASCADE;
+
+--Ajouter une nouvelle colonne "date" avec le type de données "timestamp" :
+ALTER TABLE reservation
+ADD COLUMN "date" timestamp NOT NULL;
+
+--Ajouter une nouvelle colonne "date" avec le type de données "timestamp" :
+ALTER TABLE reservation
+ADD COLUMN is_cancel Boolean not NULL;
+
+
+--Supprimer la colonne "id_reservation":
+ALTER TABLE reservation
+DROP COLUMN id_reservation CASCADE;
+
+--Ajouter une nouvelle colonne "id" avec le type de données "serial" :
+ALTER TABLE reservation
+ADD COLUMN id serial PRIMARY KEY;
+
+--Modifier le nom de la colonne "id_promotion" en "id" dans la table "promotion":
+ALTER TABLE promotion
+RENAME COLUMN id_promotion TO id;
+
+
