@@ -128,6 +128,19 @@ INSERT INTO room_type ("name") VALUES
 ('Deluxe Room'),
 ('Presidential Suite');
 
+-- Table room_features
+INSERT INTO room_features (sea_view, hot_water, wifi_available, room_service, mini_bar, flat_screen) VALUES 
+(true, true, true, true, true, true),
+(true, true, true, false, false, true),
+(false, true, true, true, true, false),
+(false, true, false, false, true, true),
+(true, false, true, true, false, true),
+(false, true, true, false, true, false),
+(true, false, true, true, false, true),
+(true, true, false, false, true, false),
+(false, true, true, false, true, true),
+(true, false, false, true, true, false);
+
 -- Table buy
 INSERT INTO buy (id_client, id_service)
 VALUES
@@ -225,20 +238,6 @@ VALUES
     ('Promotion 8', '2024-02-01', '2024-02-29', 45),
     ('Promotion 9', '2024-03-01', '2024-03-31', 50),
     ('Promotion 10', '2024-04-01', '2024-04-30', 55);
-
--- Table room_features
-INSERT INTO room_features (id_features, sea_view, VIP_category, hot_water, wifi_available, room_service, mini_bar, flat_screen)
-VALUES
-    (1, true, true, true, true, true, true, true),
-    (2, false, true, true, false, true, false, true),
-    (3, true, false, true, true, false, true, false),
-    (4, false, false, true, true, true, true, true),
-    (5, true, true, false, true, true, true, false),
-    (6, false, false, false, false, false, false, false),
-    (7, true, true, true, false, false, true, true),
-    (8, false, true, false, true, false, true, false),
-    (9, true, false, true, false, true, false, true),
-    (10, false, true, false, true, false, false, true);
 
 -- Table room
 INSERT INTO room (id_room, "number", room_type, capacity_room, id_reservation, id_promotion, id_features)
