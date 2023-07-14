@@ -2,13 +2,11 @@
 
 SELECT DISTINCT hotel.*
 FROM hotel
-JOIN room ON room.id = room.id_hotel
-INNER JOIN room_features ON room.id = room.id_room_features
+JOIN room ON room.id_hotel = hotel.id
+JOIN room_features ON room.id_room_features = room_features.id
 WHERE EXISTS (
     SELECT 1
-    FROM room_features
-    WHERE room_features.sea_view LIKE '%mot_clé_1%'
-      
-   
+    FROM room
+    WHERE room.description LIKE '%mot_clé_1%'
+        OR room.description LIKE '%mot_clé_2%'
 );
-

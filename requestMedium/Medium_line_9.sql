@@ -2,7 +2,7 @@
 Select reservation, COUNT(*) from reservation INNER JOIN
 room ON reservation.id = room.id
 INNER JOIN hotel ON 
-room.id = hotel.id WHERE name = ? 
+room.id = hotel.id WHERE name ilike "john"
 GROUP BY reservation 
 ORDER BY ASC;
 
