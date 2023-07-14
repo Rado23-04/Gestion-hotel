@@ -1,8 +1,9 @@
 --Afficher les chambres les moins réservés d'un hotel donné
-Select reservation, COUNT(*) from reservation INNER JOIN
-room ON reservation.id = room.id
-INNER JOIN hotel ON 
-room.id = hotel.id WHERE name ilike "john"
-GROUP BY reservation 
-ORDER BY ASC;
 
+select room, COUNT(*) as res FROM room INNER JOIN 
+reservation ON 
+reservation.id = room.id 
+INNER JOIN hotel ON
+hotel.id = room.id 
+WHERE hotel.id = 1
+GROUP BY room ORDER BY res ASC;
