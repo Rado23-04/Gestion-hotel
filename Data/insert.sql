@@ -32,19 +32,21 @@ INSERT INTO receptionist (first_name, last_name, "Password", email, work_contact
 ('Matthew', 'Hernandez', 'welcome123', 'matthew.hernandez@example.com', '555-123-4567', 6),
 ('Isabella', 'Lopez', 'letmein5678', 'isabella.lopez@example.com', '999-555-1234', 6);
 
--- Table Client
-INSERT INTO Client (id_client, "name", last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee)
-VALUES
-    (1, 'John', 'Doe', '1234567890', '123 Main Street', '9876543210', 'M', 123456789, 'john.doe@example.com', 'password123', 1),
-    (2, 'Jane', 'Smith', '0987654321', '456 Elm Avenue', '0123456789', 'F', 987654321, 'jane.smith@example.com', 'password456', 2),
-    (3, 'Alice', 'Johnson', '1112223333', '789 Oak Lane', '4445556666', 'F', 555444333, 'alice.johnson@example.com', 'password789', 3),
-    (4, 'Bob', 'Brown', '9998887777', '321 Pine Road', '2223334444', 'M', 888777666, 'bob.brown@example.com', 'passwordabc', 4),
-    (5, 'Emily', 'Davis', '5556667777', '654 Maple Drive', '3334445555', 'F', 777666555, 'emily.davis@example.com', 'passworddef', 5),
-    (6, 'Michael', 'Wilson', '8889990000', '987 Cedar Court', '4445556666', 'M', 222333444, 'michael.wilson@example.com', 'passwordxyz', 6),
-    (7, 'Olivia', 'Taylor', '4445556666', '654 Elm Avenue', '5556667777', 'F', 666555444, 'olivia.taylor@example.com', 'password789', 7),
-    (8, 'Daniel', 'Anderson', '7778889999', '321 Oak Lane', '6667778888', 'M', 999888777, 'daniel.anderson@example.com', 'password123', 8),
-    (9, 'Sophia', 'Clark', '2223334444', '789 Pine Road', '7778889999', 'F', 111222333, 'sophia.clark@example.com', 'password456', 9),
-    (10, 'James', 'Lee', '3334445555', '123 Maple Drive', '8889990000', 'M', 444555666, 'james.lee@example.com', 'password999', 10);
+
+-- Table customer
+INSERT INTO customer (first_name, last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee) VALUES 
+('John', 'Doe', '123-456-7890', '123 Main Street', '555-555-5555', 'M', 123456789, 'john.doe@example.com', 'password123', 1),
+('Jane', 'Smith', '987-654-3210', '456 Elm Street', '111-222-3333', 'F', 987654321, 'jane.smith@example.com', 'qwerty456', 1),
+('Michael', 'Johnson', '555-555-5555', '789 Oak Avenue', '444-444-4444', 'M', 246813579, 'michael.johnson@example.com', 'secret789', 2),
+('Emily', 'Brown', '111-222-3333', '321 Pine Street', '999-999-9999', 'F', 975318642, 'emily.brown@example.com', 'letmein123', 2),
+('David', 'Wilson', '444-444-4444', '654 Cedar Road', '777-777-7777', 'M', 852963741, 'david.wilson@example.com', 'abc123xyz', 3),
+('Sarah', 'Taylor', '999-999-9999', '987 Maple Avenue', '888-888-8888', 'F', 369852147, 'sarah.taylor@example.com', 'p@ssw0rd', 3),
+('Robert', 'Anderson', '777-777-7777', '741 Oak Street', '123-123-1234', 'M', 789456123, 'robert.anderson@example.com', 'securepwd1', 4),
+('Olivia', 'Clark', '888-888-8888', '852 Elm Road', '321-321-3210', 'F', 654123789, 'olivia.clark@example.com', 'mypassword', 4),
+('Daniel', 'Martinez', '123-123-1234', '963 Pine Avenue', '555-123-4567', 'M', 987654321, 'daniel.martinez@example.com', 'pass1234', 5),
+('Sophia', 'Rodriguez', '321-321-3210', '159 Maple Road', '999-555-1234', 'F', 123456789, 'sophia.rodriguez@example.com', 'hello5678', 5),
+('Matthew', 'Hernandez', '555-123-4567', '357 Oak Street', '555-555-5555', 'M', 789654123, 'matthew.hernandez@example.com', 'welcome123', 6),
+('Isabella', 'Lopez', '999-555-1234', '258 Pine Avenue', '999-999-9999', 'F', 321654987, 'isabella.lopez@example.com', 'letmein5678', 6);
 
 -- Table service
 INSERT INTO service (id_service, "service_name", "description", price, reduction)
