@@ -18,18 +18,19 @@ INSERT INTO hotel ("name", "address") VALUES
 ('Akory Hotel F', '987 Rue Sud Toliara');
 
 -- Table receptionist
-INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
-VALUES
-    (1, 'John', 'Doe', 'password123', 'john.doe@example.com', 123456789),
-    (2, 'Jane', 'Smith', 'password456', 'jane.smith@example.com', 987654321),
-    (3, 'Alice', 'Johnson', 'password789', 'alice.johnson@example.com', 555555555),
-    (4, 'Bob', 'Brown', 'passwordabc', 'bob.brown@example.com', 999999999),
-    (5, 'Emily', 'Davis', 'passworddef', 'emily.davis@example.com', 888888888),
-    (6, 'Michael', 'Wilson', 'passwordxyz', 'michael.wilson@example.com', 777777777),
-    (7, 'Olivia', 'Taylor', 'password789', 'olivia.taylor@example.com', 666666666),
-    (8, 'Daniel', 'Anderson', 'password123', 'daniel.anderson@example.com', 555555555),
-    (9, 'Sophia', 'Clark', 'password456', 'sophia.clark@example.com', 444444444),
-    (10, 'James', 'Lee', 'password999', 'james.lee@example.com', 333333333);
+INSERT INTO receptionist (first_name, last_name, "Password", email, work_contact, id_hotel) VALUES 
+('John', 'Doe', 'password123', 'john.doe@example.com', '123-456-7890', 1),
+('Jane', 'Smith', 'qwerty456', 'jane.smith@example.com', '987-654-3210', 1),
+('Michael', 'Johnson', 'secret789', 'michael.johnson@example.com', '555-555-5555', 2),
+('Emily', 'Brown', 'letmein123', 'emily.brown@example.com', '111-222-3333', 2),
+('David', 'Wilson', 'abc123xyz', 'david.wilson@example.com', '444-444-4444', 3),
+('Sarah', 'Taylor', 'p@ssw0rd', 'sarah.taylor@example.com', '999-999-9999', 3),
+('Robert', 'Anderson', 'securepwd1', 'robert.anderson@example.com', '777-777-7777', 4),
+('Olivia', 'Clark', 'mypassword', 'olivia.clark@example.com', '888-888-8888', 4),
+('Daniel', 'Martinez', 'pass1234', 'daniel.martinez@example.com', '123-123-1234', 5),
+('Sophia', 'Rodriguez', 'hello5678', 'sophia.rodriguez@example.com', '321-321-3210', 5),
+('Matthew', 'Hernandez', 'welcome123', 'matthew.hernandez@example.com', '555-123-4567', 6),
+('Isabella', 'Lopez', 'letmein5678', 'isabella.lopez@example.com', '999-555-1234', 6);
 
 -- Table Client
 INSERT INTO Client (id_client, "name", last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee)
@@ -72,19 +73,6 @@ VALUES
     (5, 8),
     (6, 9),
     (6, 10);
--- Table receptionist
-INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
-VALUES
-    (1, 'John', 'Doe', 'password123', 'john.doe@example.com', 123456789),
-    (2, 'Jane', 'Smith', 'password456', 'jane.smith@example.com', 987654321),
-    (3, 'Alice', 'Johnson', 'password789', 'alice.johnson@example.com', 555555555),
-    (4, 'Bob', 'Brown', 'passwordabc', 'bob.brown@example.com', 999999999),
-    (5, 'Emily', 'Davis', 'passworddef', 'emily.davis@example.com', 888888888),
-    (6, 'Michael', 'Wilson', 'passwordxyz', 'michael.wilson@example.com', 777777777),
-    (7, 'Olivia', 'Taylor', 'password789', 'olivia.taylor@example.com', 666666666),
-    (8, 'Daniel', 'Anderson', 'password123', 'daniel.anderson@example.com', 555555555),
-    (9, 'Sophia', 'Clark', 'password456', 'sophia.clark@example.com', 444444444),
-    (10, 'James', 'Lee', 'password999', 'james.lee@example.com', 333333333);
 
 -- Table Client
 INSERT INTO Client (id_client, "name", last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee)
