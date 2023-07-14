@@ -48,19 +48,18 @@ INSERT INTO customer (first_name, last_name, principal_contact, "address", emerg
 ('Matthew', 'Hernandez', '555-123-4567', '357 Oak Street', '555-555-5555', 'M', 789654123, 'matthew.hernandez@example.com', 'welcome123', 6),
 ('Isabella', 'Lopez', '999-555-1234', '258 Pine Avenue', '999-999-9999', 'F', 321654987, 'isabella.lopez@example.com', 'letmein5678', 6);
 
--- Table service
-INSERT INTO service (id_service, "service_name", "description", price, reduction)
-VALUES
-    (1, 'Service 1', 'Description 1', 10.99, 0.05),
-    (2, 'Service 2', 'Description 2', 15.99, 0.10),
-    (3, 'Service 3', 'Description 3', 20.99, 0.15),
-    (4, 'Service 4', 'Description 4', 25.99, 0.20),
-    (5, 'Service 5', 'Description 5', 30.99, 0.25),
-    (6, 'Service 6', 'Description 6', 35.99, 0.30),
-    (7, 'Service 7', 'Description 7', 40.99, 0.35),
-    (8, 'Service 8', 'Description 8', 45.99, 0.40),
-    (9, 'Service 9', 'Description 9', 50.99, 0.45),
-    (10, 'Service 10', 'Description 10', 55.99, 0.50);
+-- Table payement_method
+INSERT INTO payement_method ("name") VALUES 
+('mobile monnaie'),
+('banque'),
+('cash'),
+('mobile monnaie'),
+('banque'),
+('cash'),
+('mobile monnaie'),
+('banque'),
+('cash'),
+('mobile monnaie');
 
 -- Table buy
 INSERT INTO buy (id_client, id_service)
