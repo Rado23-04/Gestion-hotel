@@ -39,8 +39,8 @@ ALTER TABLE payment
 RENAME COLUMN "deadline_payment" TO "deadline";
 
 --Modifier le nom de la colonne "service_name" en "date" dans la table "service":
-ALTER TABLE "service_name"
-RENAME COLUMN payement_date TO "name";
+ALTER TABLE "service"
+RENAME COLUMN "service_name" TO "name";
 
 --Modifier le nom de la colonne "status_arrived" en "arrived" dans la table "status_client":
 ALTER TABLE status_client
