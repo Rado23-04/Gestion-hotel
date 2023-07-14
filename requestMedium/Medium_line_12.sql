@@ -1,10 +1,12 @@
 --Afficher la liste des clients, avec le nombre de reservations, le nombre de reservations annulées, et le total d'argent que le client 
 --a payé
-Select Customer,(select  COUNT(*) FROM Customer 
-INNER JOIN reservation r
-ON Customer.id = reservation.id GROUP BY r) AS sum_reservation,
-(select COUNT(*) FROM Customer INNER JOIN reservation r 
-ON Cutomer.id = reservation.id
-WHERE is_cancel = TRUE GROUP BY r) AS sum_reservation_canceled,
-(Select payment, COUNT(*) FROM payment 
-WHERE Customer.id = payment.id GROUP BY payement) AS sum;
+
+ SELECT customer.id AS customer_id,customer.first_name,
+COUNT(reservation.id) AS total_reservations,
+COUNT(CASE WHEN reservation.is_cancel = true THEN reservation.id end) AS canceled_reservations,
+SUM(payment.amount_paid) AS total_amount_paid
+FROM customer 
+LEFT JOIN reservation  ON customer.id = reservation.id_customer
+LEFT JOIN payment ON customer.id = payment.id_customer
+GROUP BY
+customer.id, customer.first_name;
