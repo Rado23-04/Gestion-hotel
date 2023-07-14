@@ -1,30 +1,52 @@
--- Table receptionist
-INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
-VALUES
-    (1, 'John', 'Doe', 'password123', 'john.doe@example.com', 123456789),
-    (2, 'Jane', 'Smith', 'password456', 'jane.smith@example.com', 987654321),
-    (3, 'Alice', 'Johnson', 'password789', 'alice.johnson@example.com', 555555555),
-    (4, 'Bob', 'Brown', 'passwordabc', 'bob.brown@example.com', 999999999),
-    (5, 'Emily', 'Davis', 'passworddef', 'emily.davis@example.com', 888888888),
-    (6, 'Michael', 'Wilson', 'passwordxyz', 'michael.wilson@example.com', 777777777),
-    (7, 'Olivia', 'Taylor', 'password789', 'olivia.taylor@example.com', 666666666),
-    (8, 'Daniel', 'Anderson', 'password123', 'daniel.anderson@example.com', 555555555),
-    (9, 'Sophia', 'Clark', 'password456', 'sophia.clark@example.com', 444444444),
-    (10, 'James', 'Lee', 'password999', 'james.lee@example.com', 333333333);
+-- Table province_available
+INSERT INTO province_available ("name", code) VALUES 
+('Antananarivo', 1), 
+('Antsiranana', 2), 
+('Fianarantsoa', 3), 
+('Mahajanga', 4), 
+('Toamasina', 5), 
+('Toliara', 6);
 
--- Table Client
-INSERT INTO Client (id_client, "name", last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee)
-VALUES
-    (1, 'John', 'Doe', '1234567890', '123 Main Street', '9876543210', 'M', 123456789, 'john.doe@example.com', 'password123', 1),
-    (2, 'Jane', 'Smith', '0987654321', '456 Elm Avenue', '0123456789', 'F', 987654321, 'jane.smith@example.com', 'password456', 2),
-    (3, 'Alice', 'Johnson', '1112223333', '789 Oak Lane', '4445556666', 'F', 555444333, 'alice.johnson@example.com', 'password789', 3),
-    (4, 'Bob', 'Brown', '9998887777', '321 Pine Road', '2223334444', 'M', 888777666, 'bob.brown@example.com', 'passwordabc', 4),
-    (5, 'Emily', 'Davis', '5556667777', '654 Maple Drive', '3334445555', 'F', 777666555, 'emily.davis@example.com', 'passworddef', 5),
-    (6, 'Michael', 'Wilson', '8889990000', '987 Cedar Court', '4445556666', 'M', 222333444, 'michael.wilson@example.com', 'passwordxyz', 6),
-    (7, 'Olivia', 'Taylor', '4445556666', '654 Elm Avenue', '5556667777', 'F', 666555444, 'olivia.taylor@example.com', 'password789', 7),
-    (8, 'Daniel', 'Anderson', '7778889999', '321 Oak Lane', '6667778888', 'M', 999888777, 'daniel.anderson@example.com', 'password123', 8),
-    (9, 'Sophia', 'Clark', '2223334444', '789 Pine Road', '7778889999', 'F', 111222333, 'sophia.clark@example.com', 'password456', 9),
-    (10, 'James', 'Lee', '3334445555', '123 Maple Drive', '8889990000', 'M', 444555666, 'james.lee@example.com', 'password999', 10);
+
+-- Table hotel
+INSERT INTO hotel ("name", "address") VALUES 
+('Akory Hotel A', '123 Rue Principale Antananarivo'),
+('Akory Hotel B', '456 Avenue Centrale Antsiranana'),
+('Akory Hotel C', '789 Boulevard Nord Fianarantsoa'),
+('Akory Hotel D', '321 Rue Est Mahajanga'),
+('Akory Hotel E', '654 Avenue Ouest Toamasina'),
+('Akory Hotel F', '987 Rue Sud Toliara');
+
+-- Table receptionist
+INSERT INTO receptionist (first_name, last_name, "Password", email, work_contact, id_hotel) VALUES 
+('John', 'Doe', 'password123', 'john.doe@example.com', '123-456-7890', 1),
+('Jane', 'Smith', 'qwerty456', 'jane.smith@example.com', '987-654-3210', 1),
+('Michael', 'Johnson', 'secret789', 'michael.johnson@example.com', '555-555-5555', 2),
+('Emily', 'Brown', 'letmein123', 'emily.brown@example.com', '111-222-3333', 2),
+('David', 'Wilson', 'abc123xyz', 'david.wilson@example.com', '444-444-4444', 3),
+('Sarah', 'Taylor', 'p@ssw0rd', 'sarah.taylor@example.com', '999-999-9999', 3),
+('Robert', 'Anderson', 'securepwd1', 'robert.anderson@example.com', '777-777-7777', 4),
+('Olivia', 'Clark', 'mypassword', 'olivia.clark@example.com', '888-888-8888', 4),
+('Daniel', 'Martinez', 'pass1234', 'daniel.martinez@example.com', '123-123-1234', 5),
+('Sophia', 'Rodriguez', 'hello5678', 'sophia.rodriguez@example.com', '321-321-3210', 5),
+('Matthew', 'Hernandez', 'welcome123', 'matthew.hernandez@example.com', '555-123-4567', 6),
+('Isabella', 'Lopez', 'letmein5678', 'isabella.lopez@example.com', '999-555-1234', 6);
+
+
+-- Table customer
+INSERT INTO customer (first_name, last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee) VALUES 
+('John', 'Doe', '123-456-7890', '123 Main Street', '555-555-5555', 'M', 123456789, 'john.doe@example.com', 'password123', 1),
+('Jane', 'Smith', '987-654-3210', '456 Elm Street', '111-222-3333', 'F', 987654321, 'jane.smith@example.com', 'qwerty456', 1),
+('Michael', 'Johnson', '555-555-5555', '789 Oak Avenue', '444-444-4444', 'M', 246813579, 'michael.johnson@example.com', 'secret789', 2),
+('Emily', 'Brown', '111-222-3333', '321 Pine Street', '999-999-9999', 'F', 975318642, 'emily.brown@example.com', 'letmein123', 2),
+('David', 'Wilson', '444-444-4444', '654 Cedar Road', '777-777-7777', 'M', 852963741, 'david.wilson@example.com', 'abc123xyz', 3),
+('Sarah', 'Taylor', '999-999-9999', '987 Maple Avenue', '888-888-8888', 'F', 369852147, 'sarah.taylor@example.com', 'p@ssw0rd', 3),
+('Robert', 'Anderson', '777-777-7777', '741 Oak Street', '123-123-1234', 'M', 789456123, 'robert.anderson@example.com', 'securepwd1', 4),
+('Olivia', 'Clark', '888-888-8888', '852 Elm Road', '321-321-3210', 'F', 654123789, 'olivia.clark@example.com', 'mypassword', 4),
+('Daniel', 'Martinez', '123-123-1234', '963 Pine Avenue', '555-123-4567', 'M', 987654321, 'daniel.martinez@example.com', 'pass1234', 5),
+('Sophia', 'Rodriguez', '321-321-3210', '159 Maple Road', '999-555-1234', 'F', 123456789, 'sophia.rodriguez@example.com', 'hello5678', 5),
+('Matthew', 'Hernandez', '555-123-4567', '357 Oak Street', '555-555-5555', 'M', 789654123, 'matthew.hernandez@example.com', 'welcome123', 6),
+('Isabella', 'Lopez', '999-555-1234', '258 Pine Avenue', '999-999-9999', 'F', 321654987, 'isabella.lopez@example.com', 'letmein5678', 6);
 
 -- Table service
 INSERT INTO service (id_service, "service_name", "description", price, reduction)
@@ -53,19 +75,6 @@ VALUES
     (5, 8),
     (6, 9),
     (6, 10);
--- Table receptionist
-INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
-VALUES
-    (1, 'John', 'Doe', 'password123', 'john.doe@example.com', 123456789),
-    (2, 'Jane', 'Smith', 'password456', 'jane.smith@example.com', 987654321),
-    (3, 'Alice', 'Johnson', 'password789', 'alice.johnson@example.com', 555555555),
-    (4, 'Bob', 'Brown', 'passwordabc', 'bob.brown@example.com', 999999999),
-    (5, 'Emily', 'Davis', 'passworddef', 'emily.davis@example.com', 888888888),
-    (6, 'Michael', 'Wilson', 'passwordxyz', 'michael.wilson@example.com', 777777777),
-    (7, 'Olivia', 'Taylor', 'password789', 'olivia.taylor@example.com', 666666666),
-    (8, 'Daniel', 'Anderson', 'password123', 'daniel.anderson@example.com', 555555555),
-    (9, 'Sophia', 'Clark', 'password456', 'sophia.clark@example.com', 444444444),
-    (10, 'James', 'Lee', 'password999', 'james.lee@example.com', 333333333);
 
 -- Table Client
 INSERT INTO Client (id_client, "name", last_name, principal_contact, "address", emergency_number, gender, CIN, Email, "Password", id_employee)
@@ -193,20 +202,6 @@ VALUES
     (9, '909', 'Triple', 3, 9, 9, 9),
     (10, '1010', 'Single', 1, 10, 10, 10);
 
--- Table hotel
-INSERT INTO hotel (id_hotel, hotel_name, "address")
-VALUES
-    ('HOTEL001', 'Hotel A', '123 Main Street'),
-    ('HOTEL002', 'Hotel B', '456 Elm Avenue'),
-    ('HOTEL003', 'Hotel C', '789 Oak Lane'),
-    ('HOTEL004', 'Hotel D', '321 Pine Road'),
-    ('HOTEL005', 'Hotel E', '654 Maple Drive'),
-    ('HOTEL006', 'Hotel F', '987 Cedar Court'),
-    ('HOTEL007', 'Hotel G', '654 Elm Avenue'),
-    ('HOTEL008', 'Hotel H', '321 Oak Lane'),
-    ('HOTEL009', 'Hotel I', '789 Pine Road'),
-    ('HOTEL010', 'Hotel J', '123 Maple Drive');
-
 -- Table have
 INSERT INTO have (id_room, id_hotel)
 VALUES
@@ -248,19 +243,7 @@ VALUES
     (450.00, 8, 8),
     (500.00, 9, 9),
     (550.00, 10, 10);
--- Table province_available
-INSERT INTO province_available (id_province, province_name, code_province, id_hotel)
-VALUES
-    (1, 'Province 1', 123, 'HOTEL001'),
-    (2, 'Province 2', 456, 'HOTEL002'),
-    (3, 'Province 3', 789, 'HOTEL003'),
-    (4, 'Province 4', 321, 'HOTEL004'),
-    (5, 'Province 5', 654, 'HOTEL005'),
-    (6, 'Province 6', 987, 'HOTEL006'),
-    (7, 'Province 7', 654, 'HOTEL007'),
-    (8, 'Province 8', 321, 'HOTEL008'),
-    (9, 'Province 9', 789, 'HOTEL009'),
-    (10, 'Province 10', 123, 'HOTEL010');
+
 
 -- Table payment
 INSERT INTO payment (id_payment, payement_date, amount_paid, number_night, room_occupied, deadline_payment, lending_status, total_amount_status, id_employee)
