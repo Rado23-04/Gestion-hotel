@@ -89,6 +89,32 @@ VALUES
     ('Service 9', 'Description 9', 50.99, 0.45),
     ('Service 10', 'Description 10', 55.99, 0.50);
 
+-- Table use
+INSERT INTO "use" (id_customer, id_service) VALUES 
+(1, 1),
+(2, 2),
+(3, 1),
+(4, 3),
+(5, 2),
+(6, 3),
+(7, 1),
+(8, 2),
+(9, 3),
+(10, 1);
+
+-- Table receive
+INSERT INTO receive (id_employee, id_payment) VALUES 
+(1, 1),
+(1, 2),
+(2, 3),
+(2, 4),
+(3, 5),
+(3, 6),
+(4, 7),
+(4, 8),
+(5, 9),
+(5, 10);
+
 -- Table buy
 INSERT INTO buy (id_client, id_service)
 VALUES
