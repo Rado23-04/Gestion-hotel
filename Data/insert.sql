@@ -1,3 +1,13 @@
+-- Table province_available
+INSERT INTO province_available ("name", code) VALUES 
+('Antananarivo', 1), 
+('Antsiranana', 2), 
+('Fianarantsoa', 3), 
+('Mahajanga', 4), 
+('Toamasina', 5), 
+('Toliara', 6);
+
+
 -- Table receptionist
 INSERT INTO receptionist (id_employee, first_name, last_name, "Password", email, work_contact)
 VALUES
@@ -248,19 +258,7 @@ VALUES
     (450.00, 8, 8),
     (500.00, 9, 9),
     (550.00, 10, 10);
--- Table province_available
-INSERT INTO province_available (id_province, province_name, code_province, id_hotel)
-VALUES
-    (1, 'Province 1', 123, 'HOTEL001'),
-    (2, 'Province 2', 456, 'HOTEL002'),
-    (3, 'Province 3', 789, 'HOTEL003'),
-    (4, 'Province 4', 321, 'HOTEL004'),
-    (5, 'Province 5', 654, 'HOTEL005'),
-    (6, 'Province 6', 987, 'HOTEL006'),
-    (7, 'Province 7', 654, 'HOTEL007'),
-    (8, 'Province 8', 321, 'HOTEL008'),
-    (9, 'Province 9', 789, 'HOTEL009'),
-    (10, 'Province 10', 123, 'HOTEL010');
+
 
 -- Table payment
 INSERT INTO payment (id_payment, payement_date, amount_paid, number_night, room_occupied, deadline_payment, lending_status, total_amount_status, id_employee)
