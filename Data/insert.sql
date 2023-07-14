@@ -102,18 +102,18 @@ INSERT INTO "use" (id_customer, id_service) VALUES
 (9, 3),
 (10, 1);
 
--- Table receive
-INSERT INTO receive (id_employee, id_payment) VALUES 
-(1, 1),
-(1, 2),
-(2, 3),
-(2, 4),
-(3, 5),
-(3, 6),
-(4, 7),
-(4, 8),
-(5, 9),
-(5, 10);
+-- Table status_client
+INSERT INTO status_client (arrived, missing, in_fidelity, in_blacklist, id_customer) VALUES 
+(true, false, false, false, 1),
+(true, false, false, true, 2),
+(true, true, false, false, 3),
+(true, false, true, false, 4),
+(true, false, false, true, 5),
+(true, true, false, false, 6),
+(true, false, true, false, 7),
+(true, false, false, true, 8),
+(true, true, false, false, 9),
+(true, false, true, false, 10);
 
 -- Table buy
 INSERT INTO buy (id_client, id_service)
