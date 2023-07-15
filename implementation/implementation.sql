@@ -20,7 +20,7 @@ CREATE TABLE Client(
         emergency_number  Varchar (50) NOT NULL ,
         gender            Char (1) NOT NULL ,
         CIN               Int NOT NULL ,
-        Email             Varchar (100) NOT NULL ,
+        Email             Varchar (1) NOT NULL ,
         "Password"          Varchar (50) NOT NULL ,
         id_employee int references receptionist(id_employee)
 );
@@ -36,7 +36,7 @@ CREATE TABLE service(
 
 CREATE TABLE buy (
     id_client int references Client(id_client),
-    id_service int references service(id_service)
+    id_service int references "service"(id_service)
 );
 
 
@@ -74,13 +74,13 @@ CREATE TABLE promotion(
 
 CREATE TABLE room_features(
         id_features    Int PRIMARY KEY ,
-        sea_view       Bool NOT NULL ,
-        VIP_category   Bool NOT NULL ,
-        hot_water      Bool NOT NULL ,
-        wifi_available Bool NOT NULL ,
-        room_service   Bool NOT NULL ,
-        mini_bar       Bool NOT NULL ,
-        flat_screen    Bool NOT NULL
+        sea_view       Boolean NOT NULL ,
+        VIP_category   Boolean NOT NULL ,
+        hot_water      Boolean NOT NULL ,
+        wifi_available Boolean NOT NULL ,
+        room_service   Boolean NOT NULL ,
+        mini_bar       Boolean NOT NULL ,
+        flat_screen    Boolean NOT NULL
 );
 
 
